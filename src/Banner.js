@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Banner.css';
-import axios from 'axios';
 import requests from './Requests';
 import instance from './axios';
 
@@ -13,18 +12,12 @@ function Banner() {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await instance.get(requests.fetchNetflixOriginals);
-      console.log(
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ]
-      );
+      const request = await instance.get(requests.fetchNetflixOrignals);
       setMovie(
         request.data.results[
           Math.floor(Math.random() * request.data.results.length - 1)
         ]
       );
-      console.log(movie);
       return request;
     }
     fetchData();
@@ -52,7 +45,8 @@ function Banner() {
         </h1>
       </div>
 
-      <div className="banner--fadeButton" />
+      {/* fix */}
+      {/* <div className="banner--fadeButton" /> */}
     </header>
   );
 }
