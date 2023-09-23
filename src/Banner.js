@@ -46,7 +46,7 @@ function Banner() {
       </div>
 
       {/* fix */}
-      {/* <div className="banner--fadeButton" /> */}
+      <div className="banner--fadeButton" />
     </header>
   );
 }
