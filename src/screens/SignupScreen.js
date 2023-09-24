@@ -8,33 +8,39 @@ function SignupScreen() {
 
   const register = (e) => {
     e.preventDefault();
-    auth.createUserWithEmailAndPassword(
+    auth
+      .createUserWithEmailAndPassword(
         emailRef.current.value,
         passwordRef.current.value
-    ).then((authUser)=>{
-        console.log(authUser)
-    }).catch((error)=>{
-        alert(error.message)
-    })
+      )
+      .then((authUser) => {})
+      .catch((error) => {
+        alert(error.message);
+      });
   };
 
   const signIn = (e) => {
     e.preventDefault();
-    auth.signInWithEmailAndPassword(
+    auth
+      .signInWithEmailAndPassword(
         emailRef.current.value,
         passwordRef.current.value
-    ).then((authUser)=>{
-        console.log(authUser)
-    })
+      )
+      .then((authUser) => {})
+      .catch((error) => {
+        alert(error.message);
+      });
   };
 
-   return (
+  return (
     <div className="signupScreen">
       <form>
         <h1>Sign In</h1>
         <input ref={emailRef} placeholder="Email" type="email" />
         <input ref={passwordRef} placeholder="Password" type="password" />
-        <button onClick={signIn} type="submit">Sign In</button>
+        <button onClick={signIn} type="submit">
+          Sign In
+        </button>
         <h4>
           <span className="signupScreen__gray">New to Netflix?</span>
 
